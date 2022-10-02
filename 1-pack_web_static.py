@@ -21,7 +21,8 @@ def do_pack():
     nowt = now.strftime("%Y%m%d%H%M%S")
     local("mkdir -p versions")
     file_name = "versions/{}{}.tgz".format('web_static_', nowt)
-    command = local("tar -cvf {} web_static".format(file_name))
+    print(file_name)
+    command = local("tar -cvzf {} web_static".format(file_name))
     if command.succeeded:
         return file_name
     else:
