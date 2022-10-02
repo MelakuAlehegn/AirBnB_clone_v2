@@ -11,6 +11,7 @@ from datetime import datetime
 
 env.hosts = ['3.236.253.64', '18.207.158.241']
 
+
 def do_pack():
     '''
     a function that generates a tar file from a directory
@@ -26,6 +27,7 @@ def do_pack():
         return file_name
     else:
         return None
+
 
 def do_deploy(archive_path):
     '''
@@ -51,12 +53,14 @@ def do_deploy(archive_path):
 
     return False
 
+
 def deploy():
     """creates and distributes the archive to web servers"""
     archive_path = do_pack()
     if archive_path is None:
         return False
     return do_deploy(archive_path)
+
 
 def do_clean(number=0):
     """Deletes ooutdated archives"""
