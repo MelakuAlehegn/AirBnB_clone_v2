@@ -21,7 +21,7 @@ def hbnb():
 @app.route('/c/<text>', strict_slashes=False)
 def cisfun(text):
     '''displays C followed by text variable'''
-    return 'C %s' % text
+    return ('C %s' % text.replace('_', ' '))
 
 
 if __name__ == '__main__':
